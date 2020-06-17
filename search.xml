@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>动态规划初入门</title>
+      <link href="/2020/06/16/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+      <url>/2020/06/16/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</url>
+      
+        <content type="html"><![CDATA[<h1 id="动态规划">          <a href="#动态规划" class="heading-link"><i class="fas fa-link"></i></a>动态规划</h1>      <p>动态规划(Dynamic Programming， DP)是运筹学的一个分支，是求解决策过程最优化的过程。</p><p>动态规划作为算法题目中比较经典，也是难题之一，曾困扰我非常久。每次刷题的时候，看到动态规划求解的题型，我都唯恐避之不及。但是一直逃避也不是办法，于是我打算重<span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/270a.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/270a.png?v8">✊</span>出击，迎难而上，克服恐惧！</p>        <h2 id="什么是动态规划">          <a href="#什么是动态规划" class="heading-link"><i class="fas fa-link"></i></a>什么是动态规划</h2>      <p>经过我查找多篇博客，总结出动态规划的核心思想是：<strong>记录以前做过的操作，等到下一次要再使用时，可以不用重复操作。</strong></p><p>我们可以把一类活动分成多个互相联系的各个阶段，在每一个阶段经过操作之后得到的结果记录下来，并使用到下一个阶段之中。举个例子，就是当要去计算1+1+1+1的结果时，可以先记录第一个1和第二个1相加的结果为2，然后再将2加上第三个1结果为3，然后再将3加上最后一个1结果为4，这样一来，就符合了动态规划的思想。很明显，动态规划是一个能够通过空间换取时间的算法，将结果储存起来，避免多次计算。</p>        <h2 id="动态规划问题如何解决">          <a href="#动态规划问题如何解决" class="heading-link"><i class="fas fa-link"></i></a>动态规划问题如何解决</h2>      <p>想要解决动态规划问题，理解了上面的概念之后，就很好办了。</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 动态规划 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
