@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.connorzj.github.io/"/>
-  <updated>2020-07-01T12:27:27.783Z</updated>
+  <updated>2020-07-05T15:59:02.133Z</updated>
   <id>http://www.connorzj.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2020年中总结</title>
+    <link href="http://www.connorzj.github.io/2020/07/05/2020%E5%B9%B4%E4%B8%AD%E6%80%BB%E7%BB%93/"/>
+    <id>http://www.connorzj.github.io/2020/07/05/2020%E5%B9%B4%E4%B8%AD%E6%80%BB%E7%BB%93/</id>
+    <published>2020-07-05T14:52:25.000Z</published>
+    <updated>2020-07-05T15:59:02.133Z</updated>
+    
+    <content type="html"><![CDATA[<p>白马过隙，忽然而已。</p><p>转眼就过了2020年的一半，这也是我从大学毕业后的整整一年。</p><p>这一年发生了许多事情：</p><ul><li>开始了人生中的第一份工作（正式）</li><li>找到了一位美丽动人温柔的女朋友</li><li>开始了我的博客之路</li></ul><p>说起我的博客，真的算是坎坷不平。从19年7月开始租了一台阿里云的服务器，顺带加上一年的域名。最开始博客是部署在Wordpress上面，写着写着发现没有人看，并且又忙于工作(和恋爱，嘿嘿嘿)，于是就放弃了。</p><p>在公司使用的技术是在UAP平台上开发，其实就是spring+hibernate的组合，整体是OSGI框架。其实这种框架相对于现在的主流框架来说，还是比较的过时了，不过工作还是得用。用久了之后发现，还是得去学学新的技术的，不能固步自封，于是在闲暇之余学习了Spring Boot，但是学习的过程中发现，我只会根据别人的博客和官方文档去敲demo，真正的技术却无法沉淀下来，这时我就有了重新写自己的技术博客的想法。</p><p><strong>有了想法就去干，这个是我的信条。</strong>于是我又开始了博客之旅，这一次我有了写作的目标，就是把Spring Boot的学习过程写出来。这种博客写出来我认为有两个好处：一是写给自己看，不仅在写的过程中，把技术沉淀下来，以后还能当作工具书样的，能够查查看看；二是写给别人看，我写完一篇文章之后，往往会告诉身边朋友，分享给他们看。如果某天我的文章内容能够帮助到某个人的话，这也算是对我的一种慰藉吧。</p><p>在今年疫情之时，我就开始写了博客，这时我放弃了Wordpress，转而使用了Vuepress，这个Vuepress倒是挺好用的，写的时候也很喜欢，但是有个我个人认为的缺点，就是它太新了。因为它太新，所以导致它的生态并不是很完善。有很多主题并不是很符合我的胃口，而且Vuepress设计出来就是为了写技术文档的，我认为它不是很符合我的个人博客的期望，所以我又放弃了Vuepress，正如现在所看到的，我正在使用hexo。</p><p>还好我在Vuepress上写的博客都在github保存了一份副本，所以我之后能把之前写的Spring Boot学习笔记都迁移到hexo上来，并且我入了一本小马哥著的Spring Boot编程思想，这本书还是非常厚的，对Spring Boot也是讲的更深，我今年的目标就是啃完这本书，优化之前的学习笔记，并把博客发布到掘金上。</p><p>在此立下今年的目标，希望能够一步一步实现，稳扎稳打。</p><ul><li>看完Spring Boot编程思想，并且能够将知识产出</li><li>leetcode还是该刷，起码一周一道中等的吧</li><li>现在的书单还有鸟哥的Linux私房菜，高性能MySQL，这个都是大家伙，还是得尽量看了</li><li>Spring Cloud、Elastic Search、Redis等技术还是要不停的学</li></ul><p>这样算下来，该学的技术还是挺多的。<strong>既然选择了程序员这条路，就要保持着持续学习的心。</strong>所以加油干吧！</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;白马过隙，忽然而已。&lt;/p&gt;
+&lt;p&gt;转眼就过了2020年的一半，这也是我从大学毕业后的整整一年。&lt;/p&gt;
+&lt;p&gt;这一年发生了许多事情：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;开始了人生中的第一份工作（正式）&lt;/li&gt;
+&lt;li&gt;找到了一位美丽动人温柔的女朋友&lt;/li&gt;
+&lt;li&gt;开始了我的
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>动态规划初入门</title>
