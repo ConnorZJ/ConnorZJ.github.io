@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.connorzj.github.io/"/>
-  <updated>2020-07-16T16:35:22.564Z</updated>
+  <updated>2020-07-21T15:09:26.274Z</updated>
   <id>http://www.connorzj.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Redis学习总结（一）</title>
+    <link href="http://www.connorzj.github.io/2020/07/21/Redis%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89/"/>
+    <id>http://www.connorzj.github.io/2020/07/21/Redis%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89/</id>
+    <published>2020-07-21T15:03:41.000Z</published>
+    <updated>2020-07-21T15:09:26.274Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Redis学习总结（一）">          <a href="#Redis学习总结（一）" class="heading-link"><i class="fas fa-link"></i></a>Redis学习总结（一）</h1>              <h2 id="Redis数据结构类型使用">          <a href="#Redis数据结构类型使用" class="heading-link"><i class="fas fa-link"></i></a>Redis数据结构类型使用</h2>              <h3 id="String（字符串）">          <a href="#String（字符串）" class="heading-link"><i class="fas fa-link"></i></a>String（字符串）</h3>      <ol><li><code>set key value</code> 设置键值对</li><li><code>get key</code>获取键对应的值</li><li><code>exists key</code>判断是否存在key</li><li><code>append key value</code>往key对应的值后面追加value的值，key不存在时，则新建当前key</li><li><code>strlen key</code>返回字符串的长度</li><li><code>incr key</code>使值+1</li><li><code>decr</code>使值-1</li><li><code>incrby key n</code>使值+n，设置步长为n</li><li><code>decrby key n</code>使值-n，设置步长为n</li><li><code>getrange key start end</code>截取字符串，当start为0，end为-1时，返回整个字符串</li><li><code>setrange key offset value</code>从偏移量的索引开始替换字符串</li><li><code>setex key second value</code>setex = set with expire，设置一个多少秒后过期的键值对</li><li><code>setnx key value</code>当key不存在的时候，才设置字符串</li><li><code>mset key value [key value]</code>批量设置字符串</li><li><code>msetnx key value [key value]</code>批量设置字符串，此命令是一个原子性操作，当一个存在时，剩余的key不会被设置成功</li><li><code>mget key [key]</code>批量获取值</li></ol>        <h3 id="List（列表）">          <a href="#List（列表）" class="heading-link"><i class="fas fa-link"></i></a>List（列表）</h3>      <ol><li><code>lpush key value [value]</code>往list中push值，可一次push多个，每次往头部push</li><li><code>lrange key</code> 对list进行排序</li><li><code>rpush key value [value]</code>往list的尾部push值</li><li><code>lpop key</code>pop出左边的元素</li><li><code>rpop key</code>pop出右边的元素</li><li><code>lindex key index</code>取list的的第几个元素，index为索引</li><li><code>llen key</code>取list中的长度</li><li><code>lrem key count value</code>移除list中count个value值</li><li><code>ltrim key start end</code>将list冲start索引到end索引截取，会改变list的原本的长度</li><li><code>lset key index value</code>改变原来list的第index个元素，替换成为value，索引不存在则会报错</li><li><code>linsert key before|after value newValue</code>在原来的元素的前面后者后面插入一个新的元素，原本的list长度改变</li></ol>        <h3 id="Set（集合）">          <a href="#Set（集合）" class="heading-link"><i class="fas fa-link"></i></a>Set（集合）</h3>      <ol><li><code>sadd key value</code> 往set中添加元素</li><li><code>smembers key</code> 查看set中的所有元素</li><li><code>sismember key value</code> 查看value值是否是set中的元素</li><li><code>scard key</code> 获取set集合中的元素个数</li><li><code>srem key value [value]</code> 移除set中的元素，可批量移除</li><li><code>srandmember key [count]</code> 随机获取指定个数的set中的元素，若加上count，则表示获取count个</li><li><code>spop key</code> 随机移除一个元素，并返回其值</li><li><code>smove source destination member</code> 将source的set中的member元素移动到destination的set中，source减少，destination增加</li><li><code>sdiff key1 key2 [keyn]</code> 查看set1中和set2中的元素的差集</li><li><code>sinter key1 key2 [keyn]</code> 查看set1中和set2中的元素的交集</li><li><code>sunion key1 key2 [keyn]</code> 查看set1中和set2中的元素的并集</li></ol>        <h3 id="Hash（哈希）">          <a href="#Hash（哈希）" class="heading-link"><i class="fas fa-link"></i></a>Hash（哈希）</h3>      <p><strong>数据结构为key-<key-value></key-value></strong></p><ol><li><code>hset key field value</code> 往hash中存入一个field-value的键值对</li><li><code>hget key field</code> 往hash中取出field的值</li><li><code>hset key field value [field value]</code> 批量设置hash</li><li><code>hget key field [field]</code> 批量获取hash中的field的值</li><li><code>hgetall key</code> 一次性获取hash中的所有值</li><li><code>hdel key field [field]</code> 批量删除hash中的键值对</li><li><code>hlen key</code> 获取hash中键值对的数量</li><li><code>hexists key field</code> 判断hash中的键是否存在</li><li><code>hkeys key</code> 获取hash中的所有的键集合</li><li><code>hvals key</code> 获取hash中的所有的值集合</li><li><code>hincrby key field increment</code> 增加hash中指定键的值</li><li><code>hdecrby key field decrement</code> 减少hash中指定键的值</li><li><code>hsetnx key field value</code> 存入hash中指定的键值对，若键值对不存在，则添加；若存在，则不添加</li></ol>        <h3 id="Zset（有序集合）">          <a href="#Zset（有序集合）" class="heading-link"><i class="fas fa-link"></i></a>Zset（有序集合）</h3>      <ol><li><code>zadd key score value [score value]</code>给集合添加值，score为权</li><li><code>zrange key start end</code> 将集合排序</li><li><code>zrangebyscore key min max</code> 将集合按照score排序</li><li><code>zrem key value</code> 移除集合中的元素</li><li><code>zcard key</code> 查看集合中的元素个数</li><li><code>zrevrange key min max</code> 倒序排序</li><li><code>zcount key min max</code> 获取指定区间的成员数量</li></ol>        <h2 id="Geospatial（地理空间）">          <a href="#Geospatial（地理空间）" class="heading-link"><i class="fas fa-link"></i></a>#Geospatial（地理空间）</h2>      <p>使用场景：附近的人、打车距离测算<br><strong>底层实现是zset，可用zset的api操作</strong></p><ol><li><code>geoadd key longitude latitude member [longitude latitude member]</code>添加一个地理位置，对应的值分别为经度、纬度、名称。地球两极无法直接添加</li><li><code>geopos key member [member]</code> 获取指定名称的经度和纬度</li><li><code>geogist key member1 member2 [unit]</code> 返回指定的两个地点名称之间的距离，后面可选单位例如unit为km则表示单位为千米</li><li><code>georadius key longitude latitude radius m|km|ft|mi [withdist] [withcoord] [count]</code> 查找key中指定经纬度的，指定半径的，单位为m/km/ft/mi的存在于该key中的地理位置。withdist可选是否展示两个位置的直线距离，withcoord可选是否展示该点的经纬度，count可选展示位置的数量</li><li><code>georadiusbymember key member radius m|km|ft|mi [withcoord]</code>效果同上，但是区别是指定key中的位置名称</li><li><code>geohash key member [member]</code> 将两个位置的经纬度转换成11为的字符串，两个字符串越接近，表示两个地点的距离越近</li></ol>        <h3 id="Hyperloglog（基数）">          <a href="#Hyperloglog（基数）" class="heading-link"><i class="fas fa-link"></i></a>Hyperloglog（基数）</h3>      <p>基数：不重复的元素<br>使用场景：统计网页的UV（一个人访问网站多次，还是算一次）<br>优点：占用内存是固定的 2^64个不同的元素，只需要占用12K的空间</p><ol><li><code>pfadd key member [member]</code> 存放在key中member的集合</li><li><code>pfcount key</code> 统计key中的集合个数</li><li><code>pfmerge destkey sourcekey [sourcekey]</code> 将若干个sourcekey的集合合并到destkey的目标集合中，自动去重</li></ol>        <h3 id="Bitmaps（位图）">          <a href="#Bitmaps（位图）" class="heading-link"><i class="fas fa-link"></i></a>Bitmaps（位图）</h3>      <p>使用场景：统计用户活跃与不活跃<br>数据结构：都使用二进制位来进行记录，只有0/1两种状态</p><ol><li><code>setbit key offset value</code> 设置一个key，offset的地方的状态为value</li><li><code>getbit key offset</code> 获取当前key中指定offset的状态</li><li><code>bitcount key</code> 返回key中1的状态的个数</li></ol><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Redis学习总结（一）&quot;&gt;
+          &lt;a href=&quot;#Redis学习总结（一）&quot; class=&quot;heading-link&quot;&gt;&lt;i class=&quot;fas fa-link&quot;&gt;&lt;/i&gt;&lt;/a&gt;Redis学习总结（一）&lt;/h1&gt;
+      
+      
+      
+    
+    </summary>
+    
+    
+      <category term="Redis" scheme="http://www.connorzj.github.io/categories/Redis/"/>
+    
+    
+      <category term="Redis" scheme="http://www.connorzj.github.io/tags/Redis/"/>
+    
+  </entry>
   
   <entry>
     <title>SpringBoot快速入门</title>
